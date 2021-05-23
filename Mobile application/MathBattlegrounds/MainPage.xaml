@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathBattlegrounds.MainPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <RelativeLayout >
+        <Image Source="mm_background" 
+               Aspect="AspectFill"/>
+        <StackLayout 
+            Padding="0,15,15,0"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.82}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.18}">
+            <Image Source="mm_profile_button"
+                   Aspect ="AspectFill">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnProfileButtonClicked"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Source="mm_play_button"
+                   Aspect ="AspectFill">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnPlayButtonClicked"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+        </StackLayout>
+    </RelativeLayout>
+
+</ContentPage>

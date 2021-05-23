@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathBattlegrounds.Android", "MathBattlegrounds.Android\MathBattlegrounds.Android.csproj", "{719CF7EB-FAFB-447A-95C1-BB30F11FE91C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathBattlegrounds", "MathBattlegrounds\MathBattlegrounds.csproj", "{CF9323BC-671E-44FA-8657-275D6CF1E934}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{719CF7EB-FAFB-447A-95C1-BB30F11FE91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719CF7EB-FAFB-447A-95C1-BB30F11FE91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719CF7EB-FAFB-447A-95C1-BB30F11FE91C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{719CF7EB-FAFB-447A-95C1-BB30F11FE91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719CF7EB-FAFB-447A-95C1-BB30F11FE91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{719CF7EB-FAFB-447A-95C1-BB30F11FE91C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CF9323BC-671E-44FA-8657-275D6CF1E934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9323BC-671E-44FA-8657-275D6CF1E934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9323BC-671E-44FA-8657-275D6CF1E934}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF9323BC-671E-44FA-8657-275D6CF1E934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9323BC-671E-44FA-8657-275D6CF1E934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9323BC-671E-44FA-8657-275D6CF1E934}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F809F4A8-EF5C-4FA3-B653-6524024A442F}
+	EndGlobalSection
+EndGlobal
