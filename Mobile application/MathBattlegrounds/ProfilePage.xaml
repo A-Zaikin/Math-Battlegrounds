@@ -12,8 +12,14 @@
                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}"
                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}" >
-                <Entry Placeholder="Username" PlaceholderColor="Gray" />
-                <Entry Placeholder="Password" PlaceholderColor="Gray" />
+                <Entry x:Name ="UsernameEntry" TextColor="Gray" Text ="testUsername" Placeholder="Username" PlaceholderColor="Gray" />
+                <Entry x:Name ="PasswordEntry" TextColor="Gray" Text ="testPassword" Placeholder="Password" PlaceholderColor="Gray" />
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Log in"
+                            Clicked="OnLoginButtonClicked"/>
+                    <Button Text="Register"
+                            Clicked="OnRegisterButtonClicked"/>
+                </StackLayout>
             </StackLayout>
         </RelativeLayout>
     </ContentPage.Content>

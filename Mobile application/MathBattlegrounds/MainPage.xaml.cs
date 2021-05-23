@@ -20,12 +20,6 @@ namespace MathBattlegrounds
             InitializeComponent();
         }
 
-        void Handle_Clicked(object sender, EventArgs e)
-        {
-            ServerInfo.Authenticate();
-            ((Button)sender).Text = ServerInfo.Token;
-        }
-
         void OnPlayButtonClicked(object sender, EventArgs e)
         {
 
