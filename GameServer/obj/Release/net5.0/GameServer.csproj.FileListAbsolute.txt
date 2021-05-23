@@ -1,0 +1,15 @@
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\GameServer.exe
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\GameServer.deps.json
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\GameServer.runtimeconfig.json
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\GameServer.runtimeconfig.dev.json
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\GameServer.dll
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\ref\GameServer.dll
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\GameServer.pdb
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.AssemblyInfoInputs.cache
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.AssemblyInfo.cs
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.csproj.CoreCompileInputs.cache
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.dll
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\ref\GameServer.dll
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.pdb
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.genruntimeconfig.cache
