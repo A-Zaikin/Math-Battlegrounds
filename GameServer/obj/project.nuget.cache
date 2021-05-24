@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Mn7R6fICOdbTnkJHBowBpFSsFctYIuRWNR6YrR+wn9W2hO4+z5gvYwSUPSTogaHdNVbV/cHF/e3bcUzWpS392g==",
+  "dgSpecHash": "kv6ZW2feo8B1Hxue7AaZTnogIdfcqVF01QzeO1IDyFytQpJC294cHpRkMw5fBJ3qRcdD+1gs4ABaVR1iSXHoLA==",
   "success": true,
   "projectFilePath": "E:\\Workspace\\VS\\C#\\GameServer\\GameServer\\GameServer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lev\\.nuget\\packages\\moonsharp\\2.0.0\\moonsharp.2.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
