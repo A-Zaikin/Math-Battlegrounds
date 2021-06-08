@@ -16,3 +16,4 @@ E:\Workspace\VS\C#\GameServer\GameServer\obj\Debug\net5.0\GameServer.pdb
 E:\Workspace\VS\C#\GameServer\GameServer\obj\Debug\net5.0\GameServer.genruntimeconfig.cache
 E:\Workspace\VS\C#\GameServer\GameServer\bin\Debug\net5.0\MoonSharp.Interpreter.dll
 E:\Workspace\VS\C#\GameServer\GameServer\obj\Debug\net5.0\GameServer.csproj.CopyComplete
+E:\Workspace\VS\C#\GameServer\GameServer\bin\Debug\net5.0\Newtonsoft.Json.dll

@@ -1,0 +1,14 @@
+--Division
+function Solve(seed)
+	math.randomseed(seed)
+	local num1 = math.random(1, 10)
+	local num2 = math.random(10, 100)
+	return num2
+end
+
+function GetText(seed)
+	math.randomseed(seed)
+	local num1 = math.random(1, 10)
+	local num2 = math.random(10, 100)
+	return "Разделите число " .. num1 * num2 .. " на " .. num1
+end

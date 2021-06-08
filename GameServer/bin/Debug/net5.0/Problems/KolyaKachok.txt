@@ -1,0 +1,28 @@
+--KolyaKachok
+function GetText(seed)
+	math.randomseed(seed)
+	local stairsCount = math.random(10, 20) * 4
+	local time1 = math.random(5, 10) * 4
+	local time2 = math.random(5, 10) * time1 / 4
+	return "Коля забирается на " .. stairsCount .. " " .. GetStairWord(stairsCount) .. " за " .. time1 .. " с. Если он будет забираться с той же скоростью, то сколько ступенек он преодолеет за " .. time2 .. " с?"
+end
+
+function Solve(seed)
+	math.randomseed(seed)
+	local stairsCount = math.random(10, 20) * 4
+	local time1 = math.random(5, 10) * 4
+	local time2 = math.random(5, 10) * time1 / 4
+	return stairsCount * time2 / time1
+end
+
+function GetStairWord(number)
+	local num = number % 10
+	if num == 0 or num >= 5 and num <= 9 then
+		return "ступенек "
+	end
+	if num == 1 then
+		return "ступеньку "
+	else
+		return "ступеньки "
+	end
+end
