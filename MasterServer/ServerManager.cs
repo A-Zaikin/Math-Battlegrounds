@@ -13,7 +13,7 @@ namespace MasterServer
 
         public static int GetServer(PlayerData player)
         {
-            if (lastServerPlayerCount < 6 && lastServerPort > 10000)
+            if (lastServerPlayerCount < 2 && lastServerPort > 10000)
             {
                 lastServerPlayerCount++;
                 return lastServerPort;

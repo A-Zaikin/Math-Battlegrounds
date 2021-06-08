@@ -1,0 +1,14 @@
+--Multiplication
+function Solve(seed)
+	math.randomseed(seed)
+	local num1 = math.random(1, 10)
+	local num2 = math.random(10, 100)
+	return num1 * num2
+end
+
+function GetText(seed)
+	math.randomseed(seed)
+	local num1 = math.random(1, 10)
+	local num2 = math.random(10, 100)
+	return "Умножьте число " .. num1 .. " на число " .. num2
+end 

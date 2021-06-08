@@ -52,3 +52,5 @@ E:\Workspace\VS\C#\MasterServer\MasterServer\obj\Release\netcoreapp3.1\MasterSer
 E:\Workspace\VS\C#\MasterServer\MasterServer\obj\Release\netcoreapp3.1\MasterServer.dll
 E:\Workspace\VS\C#\MasterServer\MasterServer\obj\Release\netcoreapp3.1\MasterServer.pdb
 E:\Workspace\VS\C#\MasterServer\MasterServer\obj\Release\netcoreapp3.1\MasterServer.genruntimeconfig.cache
+E:\Workspace\VS\C#\MasterServer\MasterServer\bin\Release\netcoreapp3.1\BCrypt.Net-Next.dll
+E:\Workspace\VS\C#\MasterServer\MasterServer\obj\Release\netcoreapp3.1\MasterServer.csprojAssemblyReference.cache

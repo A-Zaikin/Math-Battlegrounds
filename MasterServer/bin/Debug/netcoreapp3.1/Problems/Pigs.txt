@@ -1,0 +1,12 @@
+--Pigs
+function Solve(seed)
+	math.randomseed(seed)
+	local weight = math.random(1, 100)
+	return weight * 2
+end
+
+function GetText(seed)
+	math.randomseed(seed)
+	local weight = math.random(1, 100)
+	return "Свинья весит " .. weight .. " и еще пол свиньи. Найдите вес свиньи."
+end

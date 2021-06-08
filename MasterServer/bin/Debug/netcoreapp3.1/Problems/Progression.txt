@@ -1,0 +1,14 @@
+--Progression
+function GetText(seed)
+	math.randomseed(seed)
+	local num1 = math.random(1, 10)
+	local diff = math.random(5, 15)
+	return "В арифметической прогрессии " .. num1 .. ", " .. num1 + diff.. ", " .. num1 + 2 * diff .. " найдите 6 член"
+end
+
+function Solve(seed)
+	math.randomseed(seed)
+	local num1 = math.random(1, 10)
+	local diff = math.random(5, 15)
+	return num1 + 5 * diff
+end

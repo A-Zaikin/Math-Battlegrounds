@@ -1,0 +1,12 @@
+--Squared
+function Solve(seed)
+	math.randomseed(seed)
+	local num = math.random(1, 20)
+	return num * num
+end
+
+function GetText(seed)
+	math.randomseed(seed)
+	local num = math.random(1, 20)
+	return "Найдите квадрат числа " .. num
+end

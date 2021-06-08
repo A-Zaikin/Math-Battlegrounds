@@ -20,7 +20,7 @@ namespace MasterServer
             await context.Response.SendResponseAsync("Test").ConfigureAwait(false);
         }
 
-        [RestRoute("Post", "/api/register")]
+        [RestRoute("Get", "/api/register")]
         public async Task Register(IHttpContext context)
         {
             var login = context.Request.QueryString["login"];
@@ -53,7 +53,7 @@ namespace MasterServer
             if (BCrypt.Net.BCrypt.Verify(password, hash))
             {
                 var authToken = Guid.NewGuid().ToString();
-                responseText = "Authentication successful :" + authToken;
+                responseText = authToken;
                 var storeAuthTokenCommand = new MySqlCommand();
                 storeAuthTokenCommand.CommandText = "UPDATE useraccounts SET currentAuthToken = @token WHERE login = @login";
                 storeAuthTokenCommand.Parameters.AddWithValue("@token", authToken);
