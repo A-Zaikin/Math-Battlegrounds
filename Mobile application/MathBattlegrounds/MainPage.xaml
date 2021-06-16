@@ -8,9 +8,9 @@
         <Image Source="mm_background" 
                Aspect="AspectFill"/>
         <StackLayout 
-            Padding="0,15,15,0"
+            Padding="0,10,10,0"
             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.82}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.18}">
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}">
             <Image Source="mm_profile_button"
                    Aspect ="AspectFill">
                 <Image.GestureRecognizers>
@@ -27,7 +27,14 @@
                         NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
-
+            <Image Source="mm_private_button"
+                   Aspect ="AspectFill">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnPrivateButtonClicked"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
         </StackLayout>
     </RelativeLayout>
 

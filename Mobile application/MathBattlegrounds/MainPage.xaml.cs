@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
+using Android.Widget;
 using Xamarin.Forms;
 
 namespace MathBattlegrounds
@@ -22,12 +14,41 @@ namespace MathBattlegrounds
 
         void OnPlayButtonClicked(object sender, EventArgs e)
         {
-
+            //ServerInfo.GetSessionPort();
+            Navigation.PushAsync(new GameplayPage());
         }
 
         void OnProfileButtonClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ProfilePage());
         }
+
+        void OnPrivateButtonClicked(object sender, EventArgs e)
+        {
+            PromptPrivateRoom();
+        }
+
+        async void PromptPrivateRoom()
+        {
+            var action = await DisplayActionSheet("Приватное лобби:", "Отмена", null, "Создать", "Присоединиться");
+            switch (action)
+            {
+                case "Создать":
+                    await DisplayAlert("Код вашего лобби", ServerInfo.CreateRoom(), "OK");
+                    await Navigation.PushAsync(new GameplayPage());
+                    break;
+                case "Присоединиться":
+                    PromptCode();
+                    break;
+            }
+        }
+
+        async void PromptCode()
+        {
+            var code = await DisplayPromptAsync("Введите код приватного лобби", "");
+            ServerInfo.GetRoom(code);
+            await Navigation.PushAsync(new GameplayPage());
+        }
+
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Android.Widget;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,8 +12,8 @@ namespace MathBattlegrounds
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
     {
-        private Entry usernameEntry;
-        private Entry passwordEntry;
+        private readonly Entry usernameEntry;
+        private readonly Entry passwordEntry;
 
         public ProfilePage()
         {
@@ -25,13 +25,13 @@ namespace MathBattlegrounds
         void OnLoginButtonClicked(object sender, EventArgs e)
         {
             ServerInfo.Authenticate(usernameEntry.Text, passwordEntry.Text);
-            DisplayAlert("Login", ServerInfo.Token, "OK");
+            Toast.MakeText(Android.App.Application.Context, "Login successful", ToastLength.Short)?.Show();
         }
 
         void OnRegisterButtonClicked(object sender, EventArgs e)
         {
             ServerInfo.Register(usernameEntry.Text, passwordEntry.Text);
-            DisplayAlert("Register", ServerInfo.Token, "OK");
+            Toast.MakeText(Android.App.Application.Context, "Registration successful", ToastLength.Short)?.Show();
         }
     }
 }

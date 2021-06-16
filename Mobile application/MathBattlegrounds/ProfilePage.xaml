@@ -7,19 +7,17 @@
         <RelativeLayout>
             <Image Source="pm_main"
                    Aspect="AspectFill"/>
-                <!-- Centered and 1/3 width and height of parent -->
+            <!-- Centered and 1/3 width and height of parent -->
             <StackLayout
                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}"
                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"
                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}" >
                 <Entry x:Name ="UsernameEntry" TextColor="Gray" Text ="testUsername" Placeholder="Username" PlaceholderColor="Gray" />
                 <Entry x:Name ="PasswordEntry" TextColor="Gray" Text ="testPassword" Placeholder="Password" PlaceholderColor="Gray" />
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Log in"
-                            Clicked="OnLoginButtonClicked"/>
-                    <Button Text="Register"
-                            Clicked="OnRegisterButtonClicked"/>
-                </StackLayout>
+                <Button Text="Войти"
+                        Clicked="OnLoginButtonClicked"/>
+                <Button Text="Зарегистрироваться"
+                        Clicked="OnRegisterButtonClicked"/>
             </StackLayout>
         </RelativeLayout>
     </ContentPage.Content>

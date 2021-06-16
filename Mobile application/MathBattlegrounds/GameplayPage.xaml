@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathBattlegrounds.GameplayPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <RelativeLayout >
+            <Image Source="gm_background" 
+                   Aspect="AspectFill"/>
+            <StackLayout x:Name="PlayerStack" 
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.003}">
+            </StackLayout>
+            <Label x:Name="OpponentNameLabel"
+                   FontSize = "20"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"/>
+            <RelativeLayout RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.35}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.02}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.16}">
+                <Image Source="gm_timer_background" 
+                       Aspect="AspectFill"/>
+                <Label x:Name="TimeLabel"
+                       FontSize = "50"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=-10}"/>
+            </RelativeLayout>
+            <Label x:Name="QuestionLabel"
+                   TextColor="White"
+                   FontSize="23"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}"/>
+            <StackLayout RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}">
+                <Entry x:Name ="AnswerEntry"
+                       TextColor="White"
+                       Placeholder="Ответ"
+                       PlaceholderColor="Gray"/>
+                <Button Text="Отправить"
+                        Clicked="OnSubmitButtonClicked"/>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
