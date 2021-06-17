@@ -76,23 +76,13 @@ namespace MasterServer
                 reader.Read();
                 rating = reader.GetInt32(0);
             }
-            var playerData = new PlayerData()
-            {
-                ip = context.Request.RemoteEndPoint.Address.ToString(),
-                rating = rating
-            };
-            await context.Response.SendResponseAsync(ServerManager.GetServer(playerData).ToString()).ConfigureAwait(false);
+            await context.Response.SendResponseAsync(ServerManager.GetServer().ToString()).ConfigureAwait(false);
         }
 
-        [RestRoute("Get", "/api/update")]
-        public async Task Update(IHttpContext context)
+        [RestRoute("Get", "/api/getroom")]
+        public async Task GetRoom(IHttpContext context)
         {
-            //Console.WriteLine(context.Request.RemoteEndPoint.Address);
-            var playerData = new PlayerData()
-            {
-                ip = context.Request.RemoteEndPoint.Address.ToString()
-            };
-            await context.Response.SendResponseAsync("").ConfigureAwait(false);
+            await context.Response.SendResponseAsync(ServerManager.GetRoom(int.Parse(context.Request.QueryString["code"]))).ConfigureAwait(false);
         }
     }
 
