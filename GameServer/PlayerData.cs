@@ -15,6 +15,8 @@ namespace GameServer
         [JsonIgnore]
         public bool Connected = true;
 
+        public int OpponentId;
+
         public int Health;
         public string Name;
         public int Id;

@@ -6,7 +6,6 @@
         NewRound = 1,
         RoundResult = 2,
         Answer = 3,
-        PlayerConnected = 4,
-        GameEnded = 5
+        PlayerConnected = 4
     }
 }

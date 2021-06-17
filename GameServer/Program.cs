@@ -26,6 +26,14 @@ namespace GameServer
         private static Random random = new();
         private static PlayerData aiPlayerData = new PlayerData();
         private static int lastPlace = 8;
+
+        private enum GameState
+        {
+            WaitingForPlayers,
+            WaitingForAnswers
+        }
+
+
         static void Main(string[] args)
         {
             if (args.Length == 0)
@@ -81,7 +89,7 @@ namespace GameServer
                     NewRound();
                     foreach (var player in players.Values)
                     {
-                        if (player.Health <= 0 || !player.Connected)
+                        if (!player.Connected)
                         {
                             players.Remove(player.Id);
                         }
@@ -89,7 +97,7 @@ namespace GameServer
                     if (players.Count == 1)
                     {
                         start = false;
-                        SendPacket(players.Values.First(), new Packet(PacketType.GameEnded, "YOU WIN"));
+                        //SendPacket(players.Values.First(), new Packet(PacketType.GameEnded, "YOU WIN"));
                         Thread.Sleep(5000);
                     }
                 }
@@ -142,8 +150,10 @@ namespace GameServer
             var oddPositioned = sortedPlayers.Where((o, i) => i % 2 != 0);
             foreach (var pair in evenPositioned.Zip(oddPositioned, (even, odd) => (even, odd)))
             {
-                pairs.Add(pair.even.Id, pair.odd);
-                pairs.Add(pair.odd.Id, pair.even);
+                pairs.Add(pair.even.Id, pair.even);
+                pairs.Add(pair.odd.Id, pair.odd);
+                pair.even.OpponentId = pair.odd.Id;
+                pair.odd.OpponentId = pair.even.Id;
             }
             var roundData = new RoundData()
             {
@@ -163,7 +173,7 @@ namespace GameServer
                         var answer = JsonConvert.DeserializeObject<AnswerData>(packet.Data);
                         if (answer != null)
                             answers.Add(answer.PlayerId, answer);
-                        if (answer != null && (pairs[answer.PlayerId].IsAi || answers.ContainsKey(pairs[answer.PlayerId].Id)))
+                        if (answer != null && (pairs[players[answer.PlayerId].OpponentId].IsAi || answers.ContainsKey(pairs[players[answer.PlayerId].OpponentId].Id)))
                         {
                             CompareAnswers(pairs, answers, answer, problemData.RightAnswer);
                         }
@@ -174,8 +184,8 @@ namespace GameServer
 
         public static void CompareAnswers(Dictionary<int, PlayerData> pairs, Dictionary<int, AnswerData> answers, AnswerData answer, string rightAnswer)
         {
-            var firstPlayer = pairs[answer.PlayerId];
             var secondPlayer = players[answer.PlayerId];
+            var firstPlayer = pairs[secondPlayer.OpponentId];
             var secondPlayerAnswer = answer.Answer == rightAnswer;
             var result = new RoundResult()
             {
@@ -186,7 +196,7 @@ namespace GameServer
             {
                 if (!secondPlayerAnswer)
                 {
-                    secondPlayer.Health -= 50;
+                    secondPlayer.Health -= 30;
                     result.PlayerResult = PlayerRoundResult.Loss;
                 }
                 else
@@ -197,7 +207,8 @@ namespace GameServer
                 result.OtherPlayerHealth = 100;
                 if (result.PlayerHealth <= 0)
                 {
-                    result.PlayerPlace = 4;
+                    result.PlayerPlace = lastPlace;
+                    lastPlace -= 1;
                 }
                 SendPacket(secondPlayer, new Packet(PacketType.RoundResult, JsonConvert.SerializeObject(result)));
                 return;
@@ -228,20 +239,26 @@ namespace GameServer
             }
 
             if (result.PlayerResult == PlayerRoundResult.Loss)
-                firstPlayer.Health -= 50;
+                firstPlayer.Health -= 30;
             if (result.OtherPlayerResult == PlayerRoundResult.Loss)
-                secondPlayer.Health -= 50;
+                secondPlayer.Health -= 30;
             result.PlayerHealth = firstPlayer.Health;
             result.OtherPlayerHealth = secondPlayer.Health;
             if (result.PlayerHealth <= 0)
             {
                 result.PlayerPlace = lastPlace;
+                lastPlace -= 1;
+                result.OtherPlayerPlace = lastPlace;
+                players.Remove(firstPlayer.Id);
             }
-            SendPacket(firstPlayer, new Packet(PacketType.RoundResult, JsonConvert.SerializeObject(result)));
             if (result.OtherPlayerHealth <= 0)
             {
+                result.OtherPlayerPlace = lastPlace;
+                lastPlace -= 1;
                 result.PlayerPlace = lastPlace;
+                players.Remove(firstPlayer.Id);
             }
+            SendPacket(firstPlayer, new Packet(PacketType.RoundResult, JsonConvert.SerializeObject(result)));
             SendPacket(secondPlayer, new Packet(PacketType.RoundResult, JsonConvert.SerializeObject(result.Reversed())));
         }
 
@@ -267,7 +284,14 @@ namespace GameServer
                         {
                             SenderId = player.Id
                         };
-                        packetQueue.Enqueue(packet);
+                        if (packet.Type == PacketType.PlayerConnected)
+                        {
+                            player.Name = packet.Data;
+                        }
+                        else
+                        {
+                            packetQueue.Enqueue(packet);
+                        }
                         Console.WriteLine("Received packet of type " + type + " and size " + length + ". Contents : " + text);
                     }
                 }

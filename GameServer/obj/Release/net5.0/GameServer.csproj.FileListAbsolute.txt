@@ -16,3 +16,4 @@ E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.genruntim
 E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\MoonSharp.Interpreter.dll
 E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.csproj.CopyComplete
 E:\Workspace\VS\C#\GameServer\GameServer\bin\Release\net5.0\Newtonsoft.Json.dll
+E:\Workspace\VS\C#\GameServer\GameServer\obj\Release\net5.0\GameServer.csprojAssemblyReference.cache
